@@ -140,4 +140,34 @@ void change(int n, int field[n][n])
 	swap(&field[a][b], &field[a_n][b_n]);
 }
 
+int win(int n, int field[n][n])
+{
+	int w_field[n][n];
+	filling(n, w_field);
+
+	int i, j;
+	for (i = 0; i < n; i++)
+	{
+		for (j = 0; j < n; j++)
+		{
+			if (field[i][j] != w_field[i][j])
+			{
+				return 0;
+			}
+		}
+	}
+	return 1;
+}
+
+void contin(int n, int field[n][n])
+{
+	int course = 0;
+	while (!win(n, field))
+	{
+		change(n, field);
+		course++;
+		output_field(n, field, course);
+	}
+}
+
 

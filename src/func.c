@@ -170,4 +170,49 @@ void contin(int n, int field[n][n])
 	}
 }
 
+int amount(int n, int field[n][n], int i, int j)
+{
+	int a, b, amount = 0;
+	for (a = i; a < n; a++)
+	{
+		for (b = j; b < n; b++)
+		{
+			if (field[i][j] > field[a][b])
+			{
+				amount++;
+			}
+		}
+	}
+	return amount;
+}
 
+int solvable(int n, int field[n][n])
+{
+	int i, j, sum = 0;
+	int a, b;
+	search_of_zero(n, field, &a, &b);
+	for (i = 0; i < n; i++)
+	{
+		for (j = 0; j < n; j++)
+		{
+			sum = sum + amount(n, field, i, j);
+		}
+	}
+	sum = sum + (a + 1);
+
+	if ((sum % 2) == 0)
+	{
+		return 1;
+	}
+	return 0;
+}
+
+void total(int n, int field[n][n])
+{
+	int tot;
+	tot = solvable(n, field);
+	if (tot == 0)
+	{
+		mixing(n, field);
+	}
+}

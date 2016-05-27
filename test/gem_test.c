@@ -60,23 +60,6 @@ CTEST(gem_suite, search_of_next_test2)
 	ASSERT_EQUAL(expected_b_n, b_n);
 }
 
-CTEST(gem_suite, swap_test)
-{
-	//Given
-	int field[2][3] = 0;
-	int field[3][3] = 3;
-
-	//When
-	swap(&field[2][3], &field[3][3]);
-
-	//Then
-	int ex_field[2][3] = 3;
-	int ex_field[3][3] = 0;
-
-	ASSERT_EQUAL(ex_field[2][3], field[2][3]);
-	ASSERT_EQUAL(ex_field[3][3], field[3][3]);
-}
-
 CTEST(gem_suite, win_test)
 {
 	//Given

@@ -2,7 +2,7 @@
 
 
 bin/gem: prepare obj/main.o obj/func.o
-	gcc -Wall -o bin/quadEqu obj/main.o obj/func.o -lncurses
+	gcc -Wall -o bin/gem obj/main.o obj/func.o -lncurses
 
 obj/main.o: src/main.c
 	gcc -Wall -c src/main.c -o obj/main.o

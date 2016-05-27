@@ -1,37 +1,37 @@
-.PHONY: clean bin test prepare
+.PHONY: clean prepare functions test
 
-#############
+bin/gem: prepare obj/main.o obj/func.o
+	gcc -Wall -o bin/gem obj/main.o obj/func.o -lncurses
 
-bin/quadEqu: prepare obj/main.o obj/func.o
-	gcc -Wall -o bin/quadEqu obj/main.o obj/func.o -lncurses
+bin/test: prepare obj/func.o obj/gem_test.o obj/cmain.o
+	gcc -Wall -o bin/test obj/func.o obj/gem_test.o obj/cmain.o
 
-obj/main.o: src/main.c
-	gcc -Wall -c src/main.c -o obj/main.o
-
-obj/func.o: src/func.c
-	gcc -Wall -c src/func.c -o obj/func.o
-
-#############
-
-bin/test: prepare obj/func.o obj/gem_test.o obj/ctest.o
-	gcc -Wall -o bin/test obj/func.o obj/gem_test.o obj/ctest.o -lncurses
-
-obj/ctest.o: test/ctest.c
-	gcc -Wall -c test/ctest.c -o obj/ctest.o -Ithirdparty
-
-obj/gem_test.o: test/gem_test.c
+obj/gem_test.o: prepare test/gem_test.c
 	gcc -Wall -c test/gem_test.c -o obj/gem_test.o -Ithirdparty -Isrc
 
-#############
+obj/cmain.o: prepare test/main.c
+	gcc -Wall -c test/main.c -o obj/cmain.o -Ithirdparty
 
-prepare:
-	mkdir -p bin
-	mkdir -p obj
+obj/main.o: prepare src/main.c
+	gcc -Wall -c src/main.c -o obj/main.o
 
-bin: bin/quadEqu
+obj/func.o: prepare src/func.c
+	gcc -Wall -c src/func.c -o obj/func.o
+
+clean:
+	rm -f -r bin
+	rm -f -r obj
+
+functions: bin/gem
+	bin/gem
+
+prepare: bin obj
+
+bin:
+	mkdir bin
 
 test: bin/test
 	bin/test
 
-clean:
-	rm -f bin/* obj/*.o
+obj:
+	mkdir obj

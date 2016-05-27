@@ -6,7 +6,7 @@ CTEST(gem_suite, search_of_zero_test)
 {
 	//Given
 	const int n = 4;
-	int field[4][4] = {{12, 5, 8, 7}, {11, 2, 4, 14}, {13, 6, 1, 0}, {10, 9, 15, 3}};
+	int field[4][4] = {{12, 5, 8, 7}, {4, 11, 2, 14}, {13, 6, 1, 0}, {10, 9, 15, 3}};
 
 	//When
 	int a = 0, b = 0;
@@ -64,7 +64,7 @@ CTEST(gem_suite, win_test)
 {
 	//Given
 	const int n = 4;
-	int field[4][4] = {{12, 5, 8, 7}, {11, 2, 4, 14}, {13, 6, 1, 0}, {10, 9, 15, 3}};
+	int field[4][4] = {{12, 5, 8, 7}, {4, 11, 2, 14}, {13, 6, 1, 0}, {10, 9, 15, 3}};
 
 	//When
 	const int ret_val = win(n, field);
@@ -94,7 +94,7 @@ CTEST(gem_suite, amount_test)
 {
 	//Given
 	const int n = 4;
-	int field[4][4] = {{12, 5, 8, 7}, {11, 2, 4, 14}, {13, 6, 1, 0}, {10, 9, 15, 3}};
+	int field[4][4] = {{12, 5, 8, 7}, {4,11, 2, 14}, {13, 6, 1, 0}, {10, 9, 15, 3}};
 	const int i = 1;
 	const int j = 0;
 
@@ -111,7 +111,7 @@ CTEST(gem_suite, amount_test2)
 {
 	//Given
 	const int n = 4;
-	int field[4][4] = {{12, 5, 8, 7}, {11, 2, 4, 14}, {13, 6, 1, 0}, {10, 9, 15, 3}};
+	int field[4][4] = {{12, 5, 8, 7}, {4,11, 2, 14}, {13, 6, 1, 0}, {10, 9, 15, 3}};
 	const int i = 2;
 	const int j = 3;
 
@@ -128,7 +128,7 @@ CTEST(gem_suite, solvable_test)
 {
 	//Given
 	const int n = 4;
-	int field[4][4] = {{12, 5, 8, 7}, {11, 2, 4, 14}, {13, 6, 1, 0}, {10, 9, 15, 3}};
+	int field[4][4] = {{12, 5, 8, 7}, {4, 11, 2, 14}, {13, 6, 1, 0}, {10, 9, 15, 3}};
 
 	//When
 	const int ret_val = solvable(n, field);

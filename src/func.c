@@ -200,7 +200,7 @@ int solvable(int n, int field[n][n])
 			sum = sum + amount(n, field, i, j);
 		}
 	}
-	sum = sum + (a + 1);
+	sum = sum + a;
 
 	if ((sum % 2) == 0)
 	{

@@ -63,15 +63,15 @@ CTEST(gem_suite, search_of_next_test2)
 CTEST(gem_suite, swap_test)
 {
 	//Given
-	const int n = 4;
-	int field[4][4] = {{12, 5, 8, 7}, {11, 2, 4, 14}, {13, 6, 1,0}, {10, 9, 15, 3}};
+	int field[2][3] = 0;
+	int field[3][3] = 3;
 
 	//When
 	swap(&field[2][3], &field[3][3]);
 
 	//Then
 	int ex_field[2][3] = 3;
-	int ex_fiels[3][3] = 0;
+	int ex_field[3][3] = 0;
 
 	ASSERT_EQUAL(ex_field[2][3], field[2][3]);
 	ASSERT_EQUAL(ex_field[3][3], field[3][3]);
@@ -82,7 +82,6 @@ CTEST(gem_suite, win_test)
 	//Given
 	const int n = 4;
 	int field[4][4] = {{12, 5, 8, 7}, {11, 2, 4, 14}, {13, 6, 1, 0}, {10, 9, 15, 3}};
-	int w_field[4][4] = {{1, 2, 3, 4}, {5, 6, 7, 8}, {9, 10, 11, 12}, {13, 14, 15, 0}};
 
 	//When
 	const int ret_val = win(n, field);
@@ -98,7 +97,6 @@ CTEST(gem_suite, win_test2)
 	//Given
 	const int n = 4;
 	int field[4][4] = {{1, 2, 3, 4}, {5, 6, 7, 8}, {9, 10, 11, 12}, {13, 14, 15, 0}};
-	int w_field[4][4] = {{1, 2, 3, 4}, {5, 6, 7, 8}, {9, 10, 11, 12}, {13, 14, 15, 0}};
 
 	//When
 	const int ret_val = win(n, field);

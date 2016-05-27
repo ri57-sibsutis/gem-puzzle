@@ -143,7 +143,7 @@ CTEST(gem_suite, solvable_test2)
 {
 	//Given
 	const int n = 4;
-	int field[4][4] = {{1,2, 3, 4}, {5, 6, 7, 8}, {9, 10, 11, 12}, {13, 15, 14, 0}};
+	int field[4][4] = {{1, 2, 3, 4}, {5, 6, 7, 8}, {9, 10, 11, 12}, {13, 15, 14, 0}};
 
 	//When
 	const int ret_val = solvable(n, field);

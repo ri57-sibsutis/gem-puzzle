@@ -168,6 +168,8 @@ void contin(int n, int field[n][n])
 		course++;
 		output_field(n, field, course);
 	}
+	printw("\nYou win!\n");
+	getch();
 }
 
 int amount(int n, int field[n][n], int i, int j)

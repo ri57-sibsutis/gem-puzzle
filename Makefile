@@ -1,3 +1,4 @@
+all: bin/gem bin/test
 .PHONY: clean bin test prepare
 
 
